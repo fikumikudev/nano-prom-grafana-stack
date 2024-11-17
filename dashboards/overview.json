@@ -802,6 +802,7 @@
                 "axisPlacement": "auto",
                 "axisWidth": 80,
                 "barAlignment": 0,
+                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -833,7 +834,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -843,24 +845,7 @@
               },
               "unit": "none"
             },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byRegexp",
-                  "options": ".*all.*"
-                },
-                "properties": [
-                  {
-                    "id": "custom.hideFrom",
-                    "value": {
-                      "legend": false,
-                      "tooltip": true,
-                      "viz": true
-                    }
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
             "h": 10,
@@ -3766,79 +3751,47 @@
       "id": 42,
       "panels": [
         {
+          "columns": [],
           "datasource": {
             "type": "prometheus",
             "uid": "PE93372533F323B2F"
           },
-          "fieldConfig": {
-            "defaults": {
-              "custom": {
-                "align": "left",
-                "cellOptions": {
-                  "type": "auto"
-                },
-                "inspect": false
-              },
-              "displayName": "",
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "Time"
-                },
-                "properties": [
-                  {
-                    "id": "displayName",
-                    "value": "Time"
-                  },
-                  {
-                    "id": "unit",
-                    "value": "time: YYYY-MM-DD HH:mm:ss"
-                  },
-                  {
-                    "id": "custom.align",
-                    "value": "left"
-                  }
-                ]
-              }
-            ]
-          },
+          "fontSize": "100%",
           "gridPos": {
-            "h": 27,
+            "h": 6,
             "w": 24,
             "x": 0,
-            "y": 51
+            "y": 88
           },
           "id": 44,
-          "options": {
-            "cellHeight": "sm",
-            "footer": {
-              "countRows": false,
-              "fields": "",
-              "reducer": [
-                "sum"
-              ],
-              "show": false
-            },
-            "showHeader": true
+          "showHeader": true,
+          "sort": {
+            "col": 0,
+            "desc": true
           },
-          "pluginVersion": "11.2.0",
+          "styles": [
+            {
+              "alias": "Time",
+              "align": "left",
+              "dateFormat": "YYYY-MM-DD HH:mm:ss",
+              "pattern": "Time",
+              "type": "date"
+            },
+            {
+              "alias": "",
+              "align": "left",
+              "colors": [
+                "rgba(245, 54, 54, 0.9)",
+                "rgba(237, 129, 40, 0.89)",
+                "rgba(50, 172, 45, 0.97)"
+              ],
+              "link": false,
+              "pattern": "/.*/",
+              "thresholds": [],
+              "type": "number",
+              "unit": "none"
+            }
+          ],
           "targets": [
             {
               "datasource": {
@@ -3856,16 +3809,9 @@
             }
           ],
           "title": "Version Info",
-          "transformations": [
-            {
-              "id": "merge",
-              "options": {
-                "reducers": []
-              }
-            }
-          ],
+          "transform": "table",
           "transparent": true,
-          "type": "table"
+          "type": "table-old"
         }
       ],
       "targets": [
@@ -4022,9 +3968,9 @@
       {
         "allValue": "",
         "current": {
-          "selected": true,
-          "text": "beta-scratch_2024-09-02_12:52:02.427542",
-          "value": "beta-scratch_2024-09-02_12:52:02.427542"
+          "selected": false,
+          "text": "live-scratch_2024-11-17_18:57:46.227262",
+          "value": "live-scratch_2024-11-17_18:57:46.227262"
         },
         "datasource": {
           "type": "prometheus",
