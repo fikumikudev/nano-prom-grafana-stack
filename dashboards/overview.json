@@ -802,8 +802,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -927,8 +926,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1048,8 +1046,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1082,7 +1079,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 3620
+            "y": 3670
           },
           "id": 807,
           "options": {
@@ -1262,6 +1259,138 @@
         "x": 0,
         "y": 37
       },
+      "id": 1139,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PE93372533F323B2F"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "axisWidth": 80,
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "Bps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 24,
+            "x": 0,
+            "y": 38
+          },
+          "id": 1137,
+          "options": {
+            "legend": {
+              "calcs": [
+                "last"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "width": 450
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.3.0+security-01",
+          "repeat": "Instance",
+          "repeatDirection": "v",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PE93372533F323B2F"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "rate(network_raw_tx{job='${Job}', instance=~'${Instance}'}[${Rate}])",
+              "interval": "${Step}",
+              "legendFormat": "[ {{instance}} ] send",
+              "range": true,
+              "refId": "A"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PE93372533F323B2F"
+              },
+              "editorMode": "code",
+              "expr": "rate(network_raw_rx{job='${Job}', instance=~'${Instance}'}[${Rate}])",
+              "hide": false,
+              "legendFormat": "[ {{instance}} ] receive",
+              "range": true,
+              "refId": "B"
+            }
+          ],
+          "title": "Network/s (over ${Rate}) [ ${Instance} ]",
+          "type": "timeseries"
+        }
+      ],
+      "title": "Network",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 38
+      },
       "id": 1750,
       "panels": [
         {
@@ -1330,7 +1459,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 4308
+            "y": 4358
           },
           "id": 1926,
           "options": {
@@ -1437,7 +1566,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4318
+            "y": 4368
           },
           "id": 1798,
           "maxDataPoints": 128,
@@ -1491,7 +1620,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 39
       },
       "id": 1962,
       "panels": [
@@ -1519,7 +1648,7 @@
             "h": 11,
             "w": 24,
             "x": 0,
-            "y": 3680
+            "y": 3730
           },
           "id": 1927,
           "interval": "5s",
@@ -1607,7 +1736,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 40
       },
       "id": 1332,
       "panels": [
@@ -1674,7 +1803,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 4324
+            "y": 4374
           },
           "id": 1329,
           "options": {
@@ -1777,7 +1906,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4333
+            "y": 4383
           },
           "id": 1330,
           "options": {
@@ -1829,7 +1958,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 41
       },
       "id": 1306,
       "panels": [
@@ -1896,7 +2025,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 4355
+            "y": 4405
           },
           "id": 1281,
           "options": {
@@ -1999,7 +2128,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4364
+            "y": 4414
           },
           "id": 1304,
           "options": {
@@ -2051,7 +2180,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 42
       },
       "id": 1807,
       "panels": [
@@ -2149,7 +2278,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 4357
+            "y": 4407
           },
           "id": 1805,
           "options": {
@@ -2273,7 +2402,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4366
+            "y": 4416
           },
           "id": 1814,
           "options": {
@@ -2317,138 +2446,6 @@
         }
       ],
       "title": "Cemented",
-      "type": "row"
-    },
-    {
-      "collapsed": true,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 42
-      },
-      "id": 1139,
-      "panels": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PE93372533F323B2F"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "axisWidth": 80,
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "min": 0,
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "Bps"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 9,
-            "w": 24,
-            "x": 0,
-            "y": 89
-          },
-          "id": 1137,
-          "options": {
-            "legend": {
-              "calcs": [
-                "last"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true,
-              "width": 450
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "11.3.0+security-01",
-          "repeat": "Instance",
-          "repeatDirection": "v",
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "PE93372533F323B2F"
-              },
-              "editorMode": "code",
-              "exemplar": true,
-              "expr": "rate(network_raw_tx{job='${Job}', instance=~'${Instance}'}[${Rate}])",
-              "interval": "${Step}",
-              "legendFormat": "[ {{instance}} ] send",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "PE93372533F323B2F"
-              },
-              "editorMode": "code",
-              "expr": "rate(network_raw_rx{job='${Job}', instance=~'${Instance}'}[${Rate}])",
-              "hide": false,
-              "legendFormat": "[ {{instance}} ] receive",
-              "range": true,
-              "refId": "B"
-            }
-          ],
-          "title": "Network/s (over ${Rate}) [ ${Instance} ]",
-          "type": "timeseries"
-        }
-      ],
-      "title": "Network",
       "type": "row"
     },
     {
@@ -2511,7 +2508,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2524,10 +2522,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 6,
+            "h": 9,
             "w": 24,
             "x": 0,
-            "y": 4324
+            "y": 53
           },
           "id": 14,
           "maxDataPoints": 128,
@@ -2667,7 +2665,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4329
+            "y": 4379
           },
           "id": 1202,
           "options": {
@@ -2788,7 +2786,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 4337
+            "y": 4387
           },
           "id": 16,
           "options": {
@@ -2867,7 +2865,7 @@
             "h": 12,
             "w": 24,
             "x": 0,
-            "y": 4338
+            "y": 4388
           },
           "id": 1734,
           "options": {
@@ -3005,7 +3003,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4339
+            "y": 4389
           },
           "id": 1129,
           "maxDataPoints": 128,
@@ -3128,7 +3126,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4341
+            "y": 4391
           },
           "id": 921,
           "options": {
@@ -3245,7 +3243,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4342
+            "y": 4392
           },
           "id": 185,
           "options": {
@@ -3313,7 +3311,7 @@
             "h": 12,
             "w": 7,
             "x": 0,
-            "y": 4343
+            "y": 4393
           },
           "id": 26,
           "options": {
@@ -3348,7 +3346,7 @@
             "h": 12,
             "w": 7,
             "x": 7,
-            "y": 4343
+            "y": 4393
           },
           "id": 46,
           "options": {},
@@ -3384,7 +3382,7 @@
             "h": 12,
             "w": 10,
             "x": 14,
-            "y": 4343
+            "y": 4393
           },
           "id": 47,
           "options": {},
@@ -3419,7 +3417,7 @@
             "h": 13,
             "w": 24,
             "x": 0,
-            "y": 4355
+            "y": 4405
           },
           "id": 45,
           "options": {},
@@ -3518,7 +3516,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 4359
+            "y": 4409
           },
           "id": 44,
           "options": {},
@@ -3615,7 +3613,7 @@
             "h": 20,
             "w": 24,
             "x": 0,
-            "y": 4360
+            "y": 4410
           },
           "id": 1034,
           "options": {
@@ -3674,8 +3672,8 @@
     "list": [
       {
         "current": {
-          "text": "live-scratch_2024-11-18_13:36:13.000915",
-          "value": "live-scratch_2024-11-18_13:36:13.000915"
+          "text": "live-scratch_2024-11-18_13:40:07.013158",
+          "value": "live-scratch_2024-11-18_13:40:07.013158"
         },
         "datasource": {
           "type": "prometheus",
@@ -4024,6 +4022,6 @@
   "timezone": "browser",
   "title": "Overview",
   "uid": "nano-overview-wip",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }
