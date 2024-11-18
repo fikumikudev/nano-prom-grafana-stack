@@ -802,7 +802,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -818,7 +819,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 683
+            "y": 34
           },
           "id": 69,
           "options": {
@@ -926,7 +927,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1046,7 +1048,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1079,7 +1082,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 682
+            "y": 3620
           },
           "id": 807,
           "options": {
@@ -1152,7 +1155,7 @@
                 "axisWidth": 80,
                 "barAlignment": 0,
                 "barWidthFactor": 0.6,
-                "drawStyle": "bars",
+                "drawStyle": "line",
                 "fillOpacity": 100,
                 "gradientMode": "none",
                 "hideFrom": {
@@ -1162,6 +1165,9 @@
                 },
                 "insertNulls": false,
                 "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
                 "lineWidth": 0,
                 "pointSize": 5,
                 "scaleDistribution": {
@@ -1183,7 +1189,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1202,7 +1209,6 @@
             "y": 37
           },
           "id": 1964,
-          "maxDataPoints": 128,
           "options": {
             "legend": {
               "calcs": [
@@ -1222,7 +1228,7 @@
               "sort": "desc"
             }
           },
-          "pluginVersion": "9.1.1",
+          "pluginVersion": "11.3.0+security-01",
           "repeat": "Instance",
           "repeatDirection": "v",
           "targets": [
@@ -1232,8 +1238,10 @@
                 "uid": "PE93372533F323B2F"
               },
               "editorMode": "code",
+              "exemplar": false,
               "expr": "rate(nano_stats_counters{job='${Job}',instance=~'${Instance}',type='traffic_tcp_type',dir='out'}[${Rate}])",
-              "interval": "",
+              "instant": false,
+              "interval": "${Step}",
               "legendFormat": "[ ${Instance} ] {{detail}} ",
               "range": true,
               "refId": "A"
@@ -1322,7 +1330,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 656
+            "y": 4308
           },
           "id": 1926,
           "options": {
@@ -1429,7 +1437,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 666
+            "y": 4318
           },
           "id": 1798,
           "maxDataPoints": 128,
@@ -1511,7 +1519,7 @@
             "h": 11,
             "w": 24,
             "x": 0,
-            "y": 657
+            "y": 3680
           },
           "id": 1927,
           "interval": "5s",
@@ -1553,7 +1561,7 @@
               "layout": "auto"
             },
             "tooltip": {
-              "show": true,
+              "mode": "single",
               "showColorScale": false,
               "yHistogram": true
             },
@@ -1666,7 +1674,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 672
+            "y": 4324
           },
           "id": 1329,
           "options": {
@@ -1769,7 +1777,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 681
+            "y": 4333
           },
           "id": 1330,
           "options": {
@@ -1888,7 +1896,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 703
+            "y": 4355
           },
           "id": 1281,
           "options": {
@@ -1991,7 +1999,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 712
+            "y": 4364
           },
           "id": 1304,
           "options": {
@@ -2141,7 +2149,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 705
+            "y": 4357
           },
           "id": 1805,
           "options": {
@@ -2265,7 +2273,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 714
+            "y": 4366
           },
           "id": 1814,
           "options": {
@@ -2332,12 +2340,14 @@
                 "mode": "palette-classic"
               },
               "custom": {
+                "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "axisWidth": 80,
                 "barAlignment": 0,
+                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 10,
                 "gradientMode": "none",
@@ -2346,6 +2356,7 @@
                   "tooltip": false,
                   "viz": false
                 },
+                "insertNulls": false,
                 "lineInterpolation": "linear",
                 "lineWidth": 1,
                 "pointSize": 5,
@@ -2368,7 +2379,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2381,10 +2393,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 7,
+            "h": 9,
             "w": 24,
             "x": 0,
-            "y": 705
+            "y": 89
           },
           "id": 1137,
           "options": {
@@ -2402,6 +2414,7 @@
               "sort": "none"
             }
           },
+          "pluginVersion": "11.3.0+security-01",
           "repeat": "Instance",
           "repeatDirection": "v",
           "targets": [
@@ -2431,11 +2444,11 @@
               "refId": "B"
             }
           ],
-          "title": "TX/RX/s (over ${Rate}) [ ${Instance} ]",
+          "title": "Network/s (over ${Rate}) [ ${Instance} ]",
           "type": "timeseries"
         }
       ],
-      "title": "TX/RX",
+      "title": "Network",
       "type": "row"
     },
     {
@@ -2514,7 +2527,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 672
+            "y": 4324
           },
           "id": 14,
           "maxDataPoints": 128,
@@ -2654,7 +2667,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 677
+            "y": 4329
           },
           "id": 1202,
           "options": {
@@ -2775,7 +2788,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 685
+            "y": 4337
           },
           "id": 16,
           "options": {
@@ -2854,7 +2867,7 @@
             "h": 12,
             "w": 24,
             "x": 0,
-            "y": 686
+            "y": 4338
           },
           "id": 1734,
           "options": {
@@ -2992,7 +3005,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 687
+            "y": 4339
           },
           "id": 1129,
           "maxDataPoints": 128,
@@ -3115,7 +3128,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 689
+            "y": 4341
           },
           "id": 921,
           "options": {
@@ -3232,7 +3245,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 690
+            "y": 4342
           },
           "id": 185,
           "options": {
@@ -3300,7 +3313,7 @@
             "h": 12,
             "w": 7,
             "x": 0,
-            "y": 691
+            "y": 4343
           },
           "id": 26,
           "options": {
@@ -3335,7 +3348,7 @@
             "h": 12,
             "w": 7,
             "x": 7,
-            "y": 691
+            "y": 4343
           },
           "id": 46,
           "options": {},
@@ -3371,7 +3384,7 @@
             "h": 12,
             "w": 10,
             "x": 14,
-            "y": 691
+            "y": 4343
           },
           "id": 47,
           "options": {},
@@ -3406,7 +3419,7 @@
             "h": 13,
             "w": 24,
             "x": 0,
-            "y": 703
+            "y": 4355
           },
           "id": 45,
           "options": {},
@@ -3505,7 +3518,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 707
+            "y": 4359
           },
           "id": 44,
           "options": {},
@@ -3602,7 +3615,7 @@
             "h": 20,
             "w": 24,
             "x": 0,
-            "y": 708
+            "y": 4360
           },
           "id": 1034,
           "options": {
@@ -4011,6 +4024,6 @@
   "timezone": "browser",
   "title": "Overview",
   "uid": "nano-overview-wip",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }
