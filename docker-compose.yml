@@ -49,6 +49,7 @@ services:
       - GF_AUTH_LOGIN_COOKIE_NAME=${NAME:-local}-grafana
       - GF_RENDERING_SERVER_URL=http://grafana-renderer:8081/render
       - GF_RENDERING_CALLBACK_URL=http://grafana:${GRAFANA_PORT:-3000}/
+      - GF_DASHBOARDS_MIN_REFRESH_INTERVAL=1s
 
   grafana-renderer:
     image: grafana/grafana-image-renderer:latest
