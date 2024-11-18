@@ -781,6 +781,139 @@
         "x": 0,
         "y": 33
       },
+      "id": 110,
+      "panels": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PE93372533F323B2F"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "left",
+                "axisWidth": 80,
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 64
+          },
+          "id": 69,
+          "options": {
+            "legend": {
+              "calcs": [
+                "last",
+                "mean",
+                "max"
+              ],
+              "displayMode": "table",
+              "placement": "right",
+              "showLegend": true,
+              "sortBy": "Last",
+              "sortDesc": true,
+              "width": 450
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "desc"
+            }
+          },
+          "pluginVersion": "8.3.0",
+          "repeat": "stats_objects_l1",
+          "repeatDirection": "v",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "PE93372533F323B2F"
+              },
+              "editorMode": "code",
+              "exemplar": true,
+              "expr": "nano_stats_objects_count{job='${Job}', instance=~'${Instance}',l1=~'${stats_objects_l1}'}",
+              "interval": "${Step}",
+              "legendFormat": "[ {{instance}} ] {{l2}}",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "${stats_objects_l1}",
+          "type": "timeseries"
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Prometheus"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Object Counts",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Prometheus"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 34
+      },
       "id": 49,
       "panels": [
         {
@@ -851,7 +984,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 34
+            "y": 36
           },
           "id": 51,
           "interval": "",
@@ -918,7 +1051,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 35
       },
       "id": 805,
       "panels": [
@@ -1056,20 +1189,17 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "Prometheus"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 36
       },
-      "id": 110,
+      "id": 1963,
       "panels": [
         {
           "datasource": {
+            "default": true,
             "type": "prometheus",
             "uid": "PE93372533F323B2F"
           },
@@ -1079,22 +1209,25 @@
                 "mode": "palette-classic"
               },
               "custom": {
+                "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
                 "axisLabel": "",
-                "axisPlacement": "left",
+                "axisPlacement": "auto",
                 "axisWidth": 80,
                 "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "bars",
+                "fillOpacity": 100,
                 "gradientMode": "none",
                 "hideFrom": {
                   "legend": false,
                   "tooltip": false,
                   "viz": false
                 },
+                "insertNulls": false,
                 "lineInterpolation": "linear",
-                "lineWidth": 1,
+                "lineWidth": 0,
                 "pointSize": 5,
                 "scaleDistribution": {
                   "type": "linear"
@@ -1103,7 +1236,7 @@
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
-                  "mode": "none"
+                  "mode": "normal"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -1115,7 +1248,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1123,17 +1257,18 @@
                   }
                 ]
               },
-              "unit": "short"
+              "unit": "Bps"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 10,
+            "h": 9,
             "w": 24,
             "x": 0,
-            "y": 64
+            "y": 1
           },
-          "id": 69,
+          "id": 1964,
+          "maxDataPoints": 128,
           "options": {
             "legend": {
               "calcs": [
@@ -1153,8 +1288,8 @@
               "sort": "desc"
             }
           },
-          "pluginVersion": "8.3.0",
-          "repeat": "stats_objects_l1",
+          "pluginVersion": "9.1.1",
+          "repeat": "Instance",
           "repeatDirection": "v",
           "targets": [
             {
@@ -1163,28 +1298,18 @@
                 "uid": "PE93372533F323B2F"
               },
               "editorMode": "code",
-              "exemplar": true,
-              "expr": "nano_stats_objects_count{job='${Job}', instance=~'${Instance}',l1=~'${stats_objects_l1}'}",
-              "interval": "${Step}",
-              "legendFormat": "[ {{instance}} ] {{l2}}",
+              "expr": "rate(nano_stats_counters{job='${Job}',instance=~'${Instance}',type='traffic_tcp_type',dir='out'}[${Rate}])",
+              "interval": "",
+              "legendFormat": "[ ${Instance} ] {{detail}} ",
               "range": true,
               "refId": "A"
             }
           ],
-          "title": "${stats_objects_l1}",
+          "title": "Outgoing (avg over ${Rate}) [ ${Instance} ]",
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Prometheus"
-          },
-          "refId": "A"
-        }
-      ],
-      "title": "Object Counts",
+      "title": "Traffic",
       "type": "row"
     },
     {
@@ -1193,7 +1318,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 37
       },
       "id": 1750,
       "panels": [
@@ -1424,7 +1549,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 38
       },
       "id": 1962,
       "panels": [
@@ -1540,7 +1665,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 39
       },
       "id": 1332,
       "panels": [
@@ -1762,7 +1887,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 40
       },
       "id": 1306,
       "panels": [
@@ -1984,7 +2109,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 41
       },
       "id": 1807,
       "panels": [
@@ -2258,7 +2383,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 42
       },
       "id": 1139,
       "panels": [
@@ -2389,7 +2514,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 43
       },
       "id": 38,
       "panels": [
@@ -2404,12 +2529,14 @@
                 "mode": "palette-classic"
               },
               "custom": {
+                "axisBorderShow": false,
                 "axisCenteredZero": false,
                 "axisColorMode": "text",
                 "axisLabel": "",
                 "axisPlacement": "auto",
                 "axisWidth": 80,
                 "barAlignment": 0,
+                "barWidthFactor": 0.6,
                 "drawStyle": "bars",
                 "fillOpacity": 100,
                 "gradientMode": "none",
@@ -2418,6 +2545,7 @@
                   "tooltip": false,
                   "viz": false
                 },
+                "insertNulls": false,
                 "lineInterpolation": "linear",
                 "lineWidth": 0,
                 "pointSize": 5,
@@ -2440,7 +2568,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2456,7 +2585,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 87
+            "y": 53
           },
           "id": 14,
           "maxDataPoints": 128,
@@ -2518,7 +2647,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 44
       },
       "id": 1183,
       "panels": [
@@ -2659,7 +2788,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 44
+        "y": 45
       },
       "id": 1148,
       "panels": [
@@ -2777,7 +2906,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 46
       },
       "id": 1746,
       "panels": [
@@ -2880,7 +3009,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 47
       },
       "id": 1131,
       "panels": [
@@ -3017,7 +3146,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 48
       },
       "id": 919,
       "panels": [
@@ -3146,7 +3275,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 49
       },
       "id": 183,
       "panels": [
@@ -3276,7 +3405,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 50
       },
       "id": 25,
       "panels": [
@@ -3746,7 +3875,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 51
       },
       "id": 42,
       "panels": [
@@ -3836,7 +3965,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 52
       },
       "id": 1036,
       "panels": [
@@ -3957,7 +4086,6 @@
       "type": "row"
     }
   ],
-  "refresh": "5s",
   "revision": 1,
   "schemaVersion": 39,
   "tags": [
@@ -3968,9 +4096,9 @@
       {
         "allValue": "",
         "current": {
-          "selected": false,
-          "text": "live-scratch_2024-11-17_18:57:46.227262",
-          "value": "live-scratch_2024-11-17_18:57:46.227262"
+          "selected": true,
+          "text": "live-scratch_2024-11-17_19:07:49.760852",
+          "value": "live-scratch_2024-11-17_19:07:49.760852"
         },
         "datasource": {
           "type": "prometheus",
@@ -4028,7 +4156,7 @@
       {
         "allValue": "",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -4062,7 +4190,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -4096,7 +4224,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -4127,7 +4255,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -4162,7 +4290,7 @@
       {
         "allValue": "",
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -4198,7 +4326,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -4235,7 +4363,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "15s",
           "value": "15s"
         },
@@ -4280,7 +4408,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "1s",
           "value": "1s"
         },
@@ -4332,7 +4460,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "All"
           ],
@@ -4385,6 +4513,6 @@
   "timezone": "browser",
   "title": "Overview",
   "uid": "nano-overview-wip",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
