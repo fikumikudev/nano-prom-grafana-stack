@@ -126,7 +126,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.3.0+security-01",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -228,7 +228,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "11.3.0+security-01",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -580,7 +580,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "11.3.0+security-01",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -725,7 +725,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "11.3.0+security-01",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1079,7 +1079,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 3670
+            "y": 3734
           },
           "id": 807,
           "options": {
@@ -1411,6 +1411,7 @@
                 "axisPlacement": "left",
                 "axisWidth": 80,
                 "barAlignment": 0,
+                "barWidthFactor": 0.6,
                 "drawStyle": "line",
                 "fillOpacity": 0,
                 "gradientMode": "none",
@@ -1443,7 +1444,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1459,7 +1461,7 @@
             "h": 10,
             "w": 24,
             "x": 0,
-            "y": 4358
+            "y": 66
           },
           "id": 1926,
           "options": {
@@ -1481,7 +1483,7 @@
               "sort": "desc"
             }
           },
-          "pluginVersion": "8.3.0",
+          "pluginVersion": "11.4.0",
           "targets": [
             {
               "datasource": {
@@ -1550,7 +1552,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1566,7 +1569,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4368
+            "y": 96
           },
           "id": 1798,
           "maxDataPoints": 128,
@@ -1648,7 +1651,7 @@
             "h": 11,
             "w": 24,
             "x": 0,
-            "y": 3730
+            "y": 67
           },
           "id": 1927,
           "interval": "5s",
@@ -1803,7 +1806,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 4374
+            "y": 4438
           },
           "id": 1329,
           "options": {
@@ -1906,7 +1909,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4383
+            "y": 4447
           },
           "id": 1330,
           "options": {
@@ -2025,7 +2028,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 4405
+            "y": 4469
           },
           "id": 1281,
           "options": {
@@ -2128,7 +2131,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4414
+            "y": 4478
           },
           "id": 1304,
           "options": {
@@ -2278,7 +2281,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 4407
+            "y": 4471
           },
           "id": 1805,
           "options": {
@@ -2402,7 +2405,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4416
+            "y": 4480
           },
           "id": 1814,
           "options": {
@@ -2525,7 +2528,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 53
+            "y": 44
           },
           "id": 14,
           "maxDataPoints": 128,
@@ -2548,7 +2551,7 @@
               "sort": "desc"
             }
           },
-          "pluginVersion": "9.1.1",
+          "pluginVersion": "11.4.0",
           "repeat": "Instance",
           "repeatDirection": "v",
           "targets": [
@@ -2558,7 +2561,7 @@
                 "uid": "PE93372533F323B2F"
               },
               "editorMode": "code",
-              "expr": "avg_over_time(nano_node_threads{job=~'${Job}', instance=~'${Instance}'}[$__interval])",
+              "expr": "sum by(job, instance, name) (avg_over_time(nano_node_threads{job=~'${Job}', instance=~'${Instance}'}[$__interval]))",
               "interval": "",
               "legendFormat": "[ ${Instance} ] {{name}} ",
               "range": true,
@@ -2665,7 +2668,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4379
+            "y": 4443
           },
           "id": 1202,
           "options": {
@@ -2786,7 +2789,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 4387
+            "y": 4451
           },
           "id": 16,
           "options": {
@@ -2865,7 +2868,7 @@
             "h": 12,
             "w": 24,
             "x": 0,
-            "y": 4388
+            "y": 4452
           },
           "id": 1734,
           "options": {
@@ -3003,7 +3006,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4389
+            "y": 4453
           },
           "id": 1129,
           "maxDataPoints": 128,
@@ -3126,7 +3129,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4391
+            "y": 4455
           },
           "id": 921,
           "options": {
@@ -3243,7 +3246,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 4392
+            "y": 4456
           },
           "id": 185,
           "options": {
@@ -3311,7 +3314,7 @@
             "h": 12,
             "w": 7,
             "x": 0,
-            "y": 4393
+            "y": 4457
           },
           "id": 26,
           "options": {
@@ -3346,7 +3349,7 @@
             "h": 12,
             "w": 7,
             "x": 7,
-            "y": 4393
+            "y": 4457
           },
           "id": 46,
           "options": {},
@@ -3382,7 +3385,7 @@
             "h": 12,
             "w": 10,
             "x": 14,
-            "y": 4393
+            "y": 4457
           },
           "id": 47,
           "options": {},
@@ -3417,7 +3420,7 @@
             "h": 13,
             "w": 24,
             "x": 0,
-            "y": 4405
+            "y": 4469
           },
           "id": 45,
           "options": {},
@@ -3516,7 +3519,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 4409
+            "y": 4473
           },
           "id": 44,
           "options": {},
@@ -3613,7 +3616,7 @@
             "h": 20,
             "w": 24,
             "x": 0,
-            "y": 4410
+            "y": 4474
           },
           "id": 1034,
           "options": {
@@ -4022,6 +4025,6 @@
   "timezone": "browser",
   "title": "Overview",
   "uid": "nano-overview-wip",
-  "version": 6,
+  "version": 1,
   "weekStart": ""
 }
