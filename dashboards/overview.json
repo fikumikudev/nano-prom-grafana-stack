@@ -3666,7 +3666,7 @@
     }
   ],
   "preload": false,
-  "refresh": "1s",
+  "refresh": "auto",
   "schemaVersion": 40,
   "tags": [
     "nano"
