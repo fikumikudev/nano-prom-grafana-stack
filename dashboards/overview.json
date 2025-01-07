@@ -734,7 +734,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "rate(nano_block_count{job='${Job}', instance=~'${Instance}', type=~'${Blocks}'}[${Rate}])",
+          "expr": "deriv(nano_block_count{job='${Job}', instance=~'${Instance}', type=~'${Blocks}'}[${Rate}])",
           "instant": false,
           "interval": "${Step}",
           "intervalFactor": 1,
@@ -1186,8 +1186,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1311,8 +1310,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1444,8 +1442,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1552,8 +1549,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2511,8 +2507,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -4025,6 +4020,6 @@
   "timezone": "browser",
   "title": "Overview",
   "uid": "nano-overview-wip",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }
